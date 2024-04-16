@@ -16,6 +16,21 @@ Class {
 	#category : #TinyBlog
 }
 
+{ #category : #categories }
+TBMPost class >> unclassifiedTag [
+	" retourn the Unclassified"
+			
+	^ 'Unclassified'  
+]
+
+{ #category : #action }
+TBMPost >> beVisible [ 
+	"make thepost visible"	
+			
+	self visible: true
+	
+]
+
 { #category : #accessing }
 TBMPost >> category [
 
@@ -38,6 +53,24 @@ TBMPost >> date [
 TBMPost >> date: aDate [
 
 	date := aDate 
+]
+
+{ #category : #initialization }
+TBMPost >> initialize [ 
+	"initialization method"
+			
+	super initialize.
+   self category: self class unclassifiedTag.
+   self date: Date today.
+   self notVisible
+]
+
+{ #category : #action }
+TBMPost >> notVisible [ 
+	"make the post not visible"	
+			
+	self visible: false
+	
 ]
 
 { #category : #accessing }
