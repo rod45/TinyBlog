@@ -86,6 +86,22 @@ TBMPost >> initialize [
    self notVisible
 ]
 
+{ #category : #testing }
+TBMPost >> isUnclassified [
+	"test si a unClassified"
+
+			
+	^ self category = self class unclassifiedTag   
+]
+
+{ #category : #testing }
+TBMPost >> isVisible [ 
+	"test si visible"
+
+			
+	^ self visible 
+]
+
 { #category : #action }
 TBMPost >> notVisible [ 
 	"make the post not visible"	
