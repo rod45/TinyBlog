@@ -16,6 +16,27 @@ Class {
 	#category : #TinyBlog
 }
 
+{ #category : #'instance creation' }
+TBMPost class >> title: aTitle text: aText [
+
+	"retrun a Post with a title and a text"
+			
+ ^ self new
+		title: aTitle ;
+		text: aText ;
+		yourself 
+]
+
+{ #category : #'instance creation' }
+TBMPost class >> title: aTitle text: aText category: aCategory [
+
+	"retrun a Post with a title and a text"
+			
+ ^ (self title: aTitle text: aText )
+	   category: aCategory;
+		yourself 
+]
+
 { #category : #categories }
 TBMPost class >> unclassifiedTag [
 	" retourn the Unclassified"
