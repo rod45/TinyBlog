@@ -1,6 +1,9 @@
 Class {
 	#name : #TBMApplicationRootComponent,
 	#superclass : #WAComponent,
+	#instVars : [
+		'main'
+	],
 	#category : #'TinyBlog-Components'
 }
 
@@ -21,9 +24,27 @@ app
 	addLibrary: SBSDeploymentLibrary
 ]
 
+{ #category : #accessing }
+TBMApplicationRootComponent >> children [ 
+	^ {  main} 
+]
+
+{ #category : #initialization }
+TBMApplicationRootComponent >> initialize [ 
+	super initialize.
+	main := TBMScreenComponent new  
+]
+
 { #category : #rendering }
 TBMApplicationRootComponent >> renderContentOn: html [
 
-	html text: 'TinyBlog'
+	html render: main 
 
+]
+
+{ #category : #updating }
+TBMApplicationRootComponent >> updateRoot: anHtmlRoot [
+	super updateRoot: anHtmlRoot.
+	anHtmlRoot beHtml5.
+	anHtmlRoot title: 'TinyBlog'
 ]
