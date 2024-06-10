@@ -4,6 +4,9 @@ Classe abstraite qui contient les comportements communs des composants de TBMApp
 Class {
 	#name : #TBMScreenComponent,
 	#superclass : #WAComponent,
+	#instVars : [
+		'header'
+	],
 	#category : #'TinyBlog-Components'
 }
 
@@ -16,8 +19,27 @@ session to return the blog of the currently logged in user."
 
 ]
 
+{ #category : #accessing }
+TBMScreenComponent >> children [ 
+
+	^ { header }
+]
+
+{ #category : #initialization }
+TBMScreenComponent >> createHeaderComponent [ 
+
+	^ TBMHeaderComponent new
+]
+
+{ #category : #initialization }
+TBMScreenComponent >> initialize [ 
+
+	super initialize.
+	header := self createHeaderComponent
+]
+
 { #category : #rendering }
 TBMScreenComponent >> renderContentOn: html [
 	
-	html text: 'Hello from TBMScreenComponent'
+	html render: header
 ]
