@@ -1,6 +1,6 @@
 Class {
 	#name : #TBMApplicationRootComponent,
-	#superclass : #WAComponent,
+	#superclass : #SBSComponent,
 	#instVars : [
 		'main'
 	],

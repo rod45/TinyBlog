@@ -3,7 +3,7 @@ Classe abstraite qui contient les comportements communs des composants de TBMApp
 "
 Class {
 	#name : #TBMScreenComponent,
-	#superclass : #WAComponent,
+	#superclass : #SBSComponent,
 	#instVars : [
 		'header'
 	],
